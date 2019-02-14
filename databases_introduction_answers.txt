@@ -3,7 +3,7 @@
 	2. Integer
 	3. Date
 	4. Float
-	5. Float
+	5. Money
 
 2. A database is ideal for storing large amounts of new data without manipulating the source code. A text file is ideal for creating human readable code.
 3. SQL is different from other programming languages because it is a declarative language as opposed to a procedural language so no search algorithm is needed.
@@ -12,14 +12,26 @@
 6. String, integer, and date
 7. This payments table first shows the date and amount from all of the payments in the database. It then is showing the amounts for payments where the amount is greater than 500. It then is showing all of the information of the payments where the payee is Mega Foods.
 8.
-SELECT email, signUpDate
+SELECT email, signup
 FROM users
 WHERE name = 'DeAndre Data';
 
-SELECT userID
+email            | signup
+-------------------------------
+dadad@comcast.net| 2008-01-20
+
+SELECT userid
 FROM users
 WHERE email = 'aleesia.algorithm@uw.edu';
+
+userid           | 
+------------------
+1	 	 |
 
 SELECT *
 FROM users
 WHERE userID = 4;
+
+userid | name           | email             | signup
+--------------------------------------------------------
+4      | Brandy Boolean | bboolean@nasa.gov | 1999-10-15
