@@ -1,0 +1,25 @@
+1.
+	1. String
+	2. Integer
+	3. Date
+	4. Float
+	5. Float
+
+2. A database is ideal for storing large amounts of new data without manipulating the source code. A text file is ideal for creating human readable code.
+3. SQL is different from other programming languages because it is a declarative language as opposed to a procedural language so no search algorithm is needed.
+4. The pieces of a database system fit together in a table like structure so that each piece of information can be easily found based on the group and type of data.
+5. The table is how databases structure the data. The row represents the group of data. The columns represents the type of data relevant to all of the groups of data. The value is the piece of information that the column describes.
+6. String, integer, and date
+7. This payments table first shows the date and amount from all of the payments in the database. It then is showing the amounts for payments where the amount is greater than 500. It then is showing all of the information of the payments where the payee is Mega Foods.
+8.
+SELECT email, signUpDate
+FROM users
+WHERE name = 'DeAndre Data';
+
+SELECT userID
+FROM users
+WHERE email = 'aleesia.algorithm@uw.edu';
+
+SELECT *
+FROM users
+WHERE userID = 4;
