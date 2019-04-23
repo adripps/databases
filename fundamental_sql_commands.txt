@@ -1,0 +1,121 @@
+1. INSERT INTO adds data, UPDATE updates data, and DELETE and DROP TABLE deletes data.
+
+2. CREATE:
+	Initializes a table and creates columns and establishes their data type
+
+	CREATE TABLE <table name>(			
+	   <column 1 name> <data type for column 1>,
+	   <column 2 name> <data type for column 2>
+	);
+
+    INSERT INTO: 
+	Inserts data into a given table
+
+	INSERT INTO <table name> (<column 1 name>, <column 2 name>) //
+	VALUES
+	(<insert first piece of data into column 1>, <insert first piece of data into column 2>),
+	(<insert second piece of data into column 1>, <insert second piece of into data column 2>);
+
+    UPDATE: 
+	Updates existing data within a table
+
+	UPDATE <table name> SET <column> = <updated data>, 
+	WHERE <unique identifier>
+
+    DELETE:
+	Deletes data from a table
+
+	DELETE FROM <table name>
+	WHERE <unique identifier>
+
+    ALTER TABLE:
+	Adds, deletes, or updates columns of a given table	
+
+	ALTER TABLE <table name>
+	<ADD or DELETE or UPDATE> COLUMN <column name> <data type>;
+	
+    DROP TABLE:
+	Deletes an entire table when given the table’s particular name
+
+	DROP TABLE <table name>;
+
+3. Text can be used for names or descriptions which can offer a variety of real world uses including keeping track of item names and a short description of said item. Boolean is used for data that can either be true or false and could be useful for things like keeping track of whether or not a a user has paid for a premium feature. Numeric is a data type that holds numeric values and can be useful for storing identification numbers.
+ 
+4.
+CREATE TABLE numbers (
+	firstName text,
+	lastName text,
+	rsvp boolean,
+	numberOfGuests numeric,
+	numberOfMeals numeric 
+);
+
+ALTER TABLE numbers ADD COLUMN thankYouCard boolean SET DEFAULT false;
+
+ALTER TABLE numbers DROP COLUMN numberOfMeals;
+
+ALTER TABLE numbers ADD COLOMN tableNumber numeric;
+
+ALTER TABLE numbers DROP COLUMN tableNumber;
+
+5.
+CREATE TABLE library (
+	isbn numeric,
+	title text,
+	author text,
+	genre text,
+	publishingDate date,
+	numberOfCopies numeric,
+	availableCopies numeric
+);
+
+INSERT INTO library (isbn, title, author, genre, publishingDate, numberOfCopies, availableCopies) VALUES
+(1958274858322, ‘Harry Potter’, ‘J.K. Rowling’ , ‘fiction’, 6/26/1997, 5, 2),
+(2581038581938, ’To Kill a Mockingbird’, ‘Harper Lee’, ’fiction’, 6/11/1960, 4, 3),
+(9521204958678, ‘Catcher in the Rye’, ‘J.D. Salinger’, ‘fiction’, 7/16/1951, 3, 1);
+
+ALTER TABLE library SET availableCopies=1 WHERE isbn=1958274858322;
+
+DELETE FROM library WHERE isbn=9521204958678;
+
+6.
+CREATE TABLE spacecrafts (
+	id numeric,
+	name text,
+	yearLaunched date,
+	countryOfOrigin text,
+	description text,
+	orbitingBody text,
+	currentlyOperating boolean,
+	milesFromEarth numeric
+);
+
+INSERT INTO spacecrafts (id, name, yearLaunched, countryOfOrigin, description, orbitingBody, currentlyOperating, milesFromEarth) VALUES
+(51232, ‘Luna 10’, 1966, ‘Russia’, ‘Spacecraft for lunar orbit’, ‘Moon’, true, 238900)
+(93023, ‘Mars 2’, 1971, ‘Russia’, ‘Unmanned space probe’, ‘Mars’, true, 238900)
+(05193, ‘Phobos 1’, 1988, ‘Russia’, ‘Unmanned space probe intended to explore Mars’, ‘Mars’, true, 238900)
+
+DELETE FROM spacecrafts WHERE id=05193;
+
+ALTER TABLE spacecrafts SET currentlyOperating= false WHERE id=51232;
+
+7.
+CREATE TABLE emails (
+	id numeric,
+	subjectLine text,
+	sender text,
+	additionalRecipients text,
+	body text,
+	timestamp timestamp,
+	readEmail boolean,
+	chainId numeric
+);
+
+INSERT INTO emails (id, subjectLine, sender, additionalRecipients, body, timestamp, readEmail, chainId)
+(2543, ‘Lunch?’, ‘Alison’, ‘Mom’, ‘Let’s grab lunch tomorrow at Bob’s Diner’, 2019-01-01 12:10:32, true, 0001)
+(1432, ‘Lunch?’, ‘Mom’, ‘Alison’, ‘Sounds great does 12:30 work for you?’, 2019-01-01 12:15:12, true, 0002)
+(0987, ‘Lunch?’, ‘Alison’, ‘Mom’, ‘Yeah, I’ll see you there’, 2019-01-01 12:19:54, false, 0003)
+
+DELETE FROM emails WHERE id=2543;
+
+ALTER TABLE emails SET readEmail= false WHERE id-0987;
