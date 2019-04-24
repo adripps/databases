@@ -1,0 +1,65 @@
+1. Use a JOIN method
+2. An INNER JOIN shows all of the data that applies to both tables under the given conditions. For example, if you had a table of the menu items for each of your two favorite restaurants and wanted a list of only the vegetarian items from each restaurant. A LEFT OUTER JOIN shows all of the data in the first table that follows the given conditions and adds a new row to the result with null if the second table doesn’t satisfy the given condition. For example, say a hotel is trying to find the ratio of vacant to occupied rooms. They have a table with the information for all of their rooms and a second table that shows their rooms that are occupied. A LEFT OUTER JOIN of the two tables would create a table of all the rooms with null next to the unoccupied rooms making finding the ratio of vacant to occupied rooms much easier. A RIGHT OUTER JOIN shows all of the data in the second table that follows the given conditions and adds a new row to the result with null if the first table doesn’t satisfy the given condition. Going back to the LEFT OUTER JOIN example say the cleaning staff now needs all of the room information for only the rooms that were occupied. A RIGHT OUTER JOIN would provide a table of only the rooms that were occupied and therefore needed cleaning along with the extra information of those rooms from the first table. 
+3. The primary key is a unique identifier appearing only once throughout the table. A real life example would be a table used to track employees’ contact information. A column with a unique identification number for each employee could serve as a primary key. A foreign keys is another table’s primary key. So say along with the previously mentioned table there’s another table that tracks salaries. A column that matches the unique identification numbers would be the foreign key used to identify the relationship between the two tables.
+4. Aliasing is using a short variable name to replace the table name in a query.
+5. 
+SELECT p.name, c.salary, c.vacation_days 
+FROM professor AS p 
+JOIN compensation AS c
+ON p.id = c.professor_id;
+6.
+A natural join would be used for finding the column names that occur in both input tables. An example would be if you were recording a customer’s name and email and separately recording a customer’s name and phone number and wanted their information in one spot for easy to find contact information. A NATURAL JOIN would use the similarly named ‘name’ column to place the phone and email columns with the corresponding names.
+7.
+SELECT e.name, s.date, s.start_time, s.end_time
+FROM employees AS e
+FULL OUTER JOIN shifts AS s
+ON e.id = s.id;
+8.
+SELECT v.first_name, v.last_name, d.name
+FROM volunteers AS v
+LEFT JOIN dogs AS d
+ON v.foster_dog_id = d.id;
+
+SELECT c.name, a.first_name, a.last_name, ca.date
+FROM cat_adoptions AS ca
+JOIN adopters AS a
+ON ca.adopter_id = a.id
+JOIN cats AS c
+ON ca.cat_id = c.id
+WHERE ca.date > CURRENT_DATE - INTERVAL '30 DAYS’;
+
+SELECT adopters.first_name, adopters.last_name
+FROM adopters
+JOIN dog_adoptions
+ON adopters.id != dog_adoptions.adopter_id;
+
+SELECT cats.name
+FROM cats
+JOIN cat_adoptions
+ON cats.id = cat_adoptions.cat_id;
+SELECT dogs.name
+FROM dogs
+JOIN dog_adoptions
+ON dogs.id = dog_adoptions.dog_id;
+
+SELECT a.first_name, a.last_name
+FROM dog_adoptions AS da
+JOIN adopters AS a
+ON da.adopter_id = a.id
+JOIN dogs AS d
+ON da.dog_id = d.id
+WHERE d.name = 'Rosco';
+9.
+SELECT patrons.name, holds.rank
+FROM holds
+JOIN patrons
+ON patrons.id = holds.patron_id
+ORDER BY rank;
+
+SELECT patrons.name, books.title
+FROM transactions
+JOIN books
+ON books.isbn = transactions.isbn
+RIGHT JOIN patrons
+ON patrons.id = transactions.patron_id
+
