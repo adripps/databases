@@ -1,0 +1,102 @@
+1.
+SELECT <column >
+FROM <table>
+Optional: WHERE <condition>
+
+2.
+SELECT:		Stop
+Column:		Claiming	
+FROM:		Frogs
+Table:		Took
+Optional	Our
+WHERE:		Wedding
+Condition:	China
+
+3.
+SELECT name, gender, age
+FROM dogs
+WHERE breed LIKE ‘Labrador’;
+
+SELECT id
+FROM dogs
+WHERE age < 1;
+
+SELECT name, age
+FROM dogs
+WHERE gender = female AND weight > 35;
+
+SELECT *
+FROM dogs
+WHERE breed NOT LIKE ’Shepherd’;
+
+SELECT id, age, weight, breed
+FROM dogs
+WHERE breed =. ‘Great Dane’ OR weight > 60; 
+
+4.
+Mushi 2016-03-22'
+Seashell NULL
+Azul 2016-04-17
+Victoire 2016-09-01
+Nala NULL
+
+Mushi 1
+Seashell 7
+Azul 3
+Victoire 7
+Nala 1
+
+5.
+SELECT *
+FROM cats;
+
+SELECT name, gender
+FROM cats
+WHERE age = 7;
+
+SELECT name
+FROM cats;
+
+**6.
+>: Greater than
+	Example: Checking if a user has spent over $1000 to offer them a reward   	
+<: Less than
+	Example: Checking if a user is under 12 years old so a child friendly webpage can appear
+=: Equal to
+	Example: Checking if the amount a customer has paid is the same as the amount they owed
+<=: Less than or equal to
+	Example: Checking if a user has not spent enough to waive the shipping fee
+>=: Greater than or equal to
+	Example: Checking if a user's age is over 21 so alcohol can be advertised to them
+!=: Not equal to
+	Example: Creating a list of everyone who didn't score 100% so these people know to retake it
+<>: Greater than or less than
+	Example: Checking if it's before 7 am and after 9 pm so a night mode webpage can appear
+LIKE: Pattern matching a string
+	Example: Finding all user's with inappropriate words in their username so they can be removed
+BETWEEN: Finds all of the values between two given values
+	Example: Finding all users ages 21 to 30 to invite to a night club
+IS DISTINCT FROM: Similar to <>, but used when one input could be null
+	Example: Checking if hot dogs are over or under stocked compared to hot dog buns
+IS TRUE/IS FALSE: Returns true or false
+	Example: Checking if a specific library book is currently checked out
+IS NULL: Determines is the value is null
+	Example: Checking if any library books are checked out by a particular user
+AND: Requires both expressions to be true to be returned
+	Example: A microwave only turning on if the door is closed and the start button is pressed
+OR: Requires one expression to be true to be returned
+	Example: Using a button on the remote or tv to turn off the tv
+NOT: Requires the expression to be false to be returned
+	Example: Filtering out people with criminal backgrounds for childcare work
+
+7.
+Seashell
+Nala
+
+Mushi
+Seashell
+Victoire
+Nala 
+
+3
+4
